@@ -1,0 +1,40 @@
+/* variables.css */
+:root {
+  /* Brand colors – replace with exact values from Manual de Marca */
+  --color-primary: #6AA439; /* VERDE */
+  --color-primary-dark: #316234; /* VERDE OSCURO */
+  --color-secondary: #A11129; /* ROJO */
+  --color-accent: #CC5E4D; /* ROJO CLARO */
+  --color-bg-light: #f8f9fa;
+  --color-bg-dark: #212529;
+  --color-text-light: #ffffff;
+  --color-text-dark: #212529;
+  /* Font families */
+  --font-primary: 'Arial', 'Helvetica', 'Helvetica Neue', sans-serif;
+  --font-heading: 'Poppins', 'Outfit', var(--font-sans);
+  /* Spacing */
+  --space-xs: 0.4rem;
+  --space-sm: 0.8rem;
+  --space-md: 1.6rem;
+  --space-lg: 3.2rem;
+  --space-xl: 4.8rem;
+  /* Border radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.15);
+  --shadow-lg: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Dark mode toggle – user can add a class .dark on <html> */
+html.dark {
+  --color-bg: var(--color-bg-dark);
+  --color-text: var(--color-text-light);
+}
+
+html {
+  --color-bg: var(--color-bg-light);
+  --color-text: var(--color-text-dark);
+}
