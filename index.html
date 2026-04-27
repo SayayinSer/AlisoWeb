@@ -3,74 +3,526 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aliso - Consultoría GeneXus & IA</title>
-  <meta name="description" content="Consultoría, soporte, capacitación y desarrollo sobre GeneXus con IA propia y de terceros." />
-  <link rel="stylesheet" href="css/variables.css" />
+  <title>Aliso Web Solution — Consultoría GeneXus & IA</title>
+  <meta name="description" content="Consultoría, soporte, capacitación y desarrollo sobre GeneXus con Inteligencia Artificial. Transformamos tu negocio con soluciones tecnológicas a medida." />
+  <meta property="og:title" content="Aliso Web Solution — Consultoría GeneXus & IA" />
+  <meta property="og:description" content="Consultoría, soporte, capacitación y desarrollo sobre GeneXus con IA." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://aliso.com.ar/" />
+  <link rel="icon" href="assets/logo.png" type="image/png" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <!-- Header / Navigation -->
-  <header class="site-header">
-    <nav class="nav-container">
-      <a href="index.html" class="logo">Aliso</a>
-      <ul class="nav-links">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="services.html">Servicios</a></li>
-        <li><a href="about.html">Nosotros</a></li>
-        <li><a href="contact.html">Contacto</a></li>
-      </ul>
-    </nav>
+
+  <!-- ═══════════════════════════════════════
+       HEADER
+       ═══════════════════════════════════════ -->
+  <header class="header" id="header">
+    <div class="container">
+      <nav class="nav">
+        <a href="#" class="nav__logo">
+          <img src="assets/logo.png" alt="Aliso Web Solution Logo" />
+          <span class="nav__logo-text">Aliso</span>
+        </a>
+        <ul class="nav__links" id="navLinks">
+          <li><a href="#servicios" class="nav__link">Servicios</a></li>
+          <li><a href="#como-funciona" class="nav__link">Cómo Funciona</a></li>
+          <li><a href="#tecnologias" class="nav__link">Tecnologías</a></li>
+          <li><a href="#testimonios" class="nav__link">Testimonios</a></li>
+          <li><a href="#faq" class="nav__link">FAQ</a></li>
+          <li><a href="#contacto" class="nav__link">Contacto</a></li>
+        </ul>
+        <div class="nav__actions">
+          <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">🌙</button>
+          <a href="#contacto" class="btn btn--primary">Agendar Reunión</a>
+          <button class="nav__hamburger" id="navHamburger" aria-label="Menú">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </nav>
+    </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Transformamos tu negocio con GeneXus y IA</h1>
-      <p>Consultoría, soporte, capacitación y desarrollos a medida que aceleran la innovación.</p>
-      <a href="contact.html" class="cta-button">Solicitar una llamada</a>
+  <!-- ═══════════════════════════════════════
+       HERO
+       ═══════════════════════════════════════ -->
+  <section class="hero" id="inicio">
+    <div class="hero__bg"></div>
+    <div class="hero__grid"></div>
+    <div class="container">
+      <div class="hero__content reveal">
+        <div class="hero__badge">
+          <span>🟢</span> Partner GeneXus · IA Enterprise
+        </div>
+        <h1 class="hero__title">
+          Aceleramos la <span class="highlight">Transformación Digital</span> con GeneXus & IA
+        </h1>
+        <p class="hero__description">
+          Consultoría estratégica de alto nivel para optimizar procesos de negocio. 
+          Implementamos soluciones de Inteligencia Artificial Generativa y desarrollo 
+          low-code que garantizan escalabilidad, seguridad y un retorno de inversión medible.
+        </p>
+        <div class="hero__actions">
+          <a href="#contacto" class="btn btn--primary btn--large">Agendar Consultoría Gratuita →</a>
+          <a href="#servicios" class="btn btn--secondary btn--large">Explorar Soluciones</a>
+        </div>
+      </div>
+      <div class="hero__visual reveal reveal-delay-2">
+        <div class="hero__visual-card">
+          <div class="hero__stats">
+            <div class="hero__stat">
+              <div class="hero__stat-number">15+</div>
+              <div class="hero__stat-label">Años de Liderazgo</div>
+            </div>
+            <div class="hero__stat">
+              <div class="hero__stat-number">250+</div>
+              <div class="hero__stat-label">Sistemas Implementados</div>
+            </div>
+            <div class="hero__stat">
+              <div class="hero__stat-number">50+</div>
+              <div class="hero__stat-label">Clientes Corporativos</div>
+            </div>
+            <div class="hero__stat">
+              <div class="hero__stat-number">100%</div>
+              <div class="hero__stat-label">Compromiso</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="hero-bg"></div>
   </section>
 
-  <!-- Features / Services -->
-  <section class="features">
-    <h2>Nuestros Servicios</h2>
-    <div class="cards">
-      <article class="card">
-        <div class="icon">🛠️</div>
-        <h3>Consultoría GeneXus</h3>
-        <p>Arquitectura, modelado y estrategia de desarrollo low‑code.</p>
-      </article>
-      <article class="card">
-        <div class="icon">🤖</div>
-        <h3>Inteligencia Artificial</h3>
-        <p>Integración de IA propia de GeneXus y APIs externas.</p>
-      </article>
-      <article class="card">
-        <div class="icon">📚</div>
-        <h3>Capacitación</h3>
-        <p>Formación práctica para equipos de desarrollo.</p>
-      </article>
-      <article class="card">
-        <div class="icon">🛡️</div>
-        <h3>Soporte & Mantenimiento</h3>
-        <p>Monitoreo, actualizaciones y asistencia continua.</p>
-      </article>
+  <!-- ═══════════════════════════════════════
+       TECHNOLOGIES MARQUEE
+       ═══════════════════════════════════════ -->
+  <div class="tech-strip" id="tecnologias">
+    <div class="tech-strip__inner">
+      <span class="tech-strip__item">⚡ GeneXus</span>
+      <span class="tech-strip__item">🤖 GeneXus Enterprise IA</span>
+      <span class="tech-strip__item">🐍 Python & FastAPI</span>
+      <span class="tech-strip__item">🗄️ PostgreSQL</span>
+      <span class="tech-strip__item">☁️ AWS / Azure</span>
+      <span class="tech-strip__item">🔗 API REST</span>
+      <span class="tech-strip__item">📊 Power BI</span>
+      <span class="tech-strip__item">🧠 OpenAI / Gemini</span>
+      <span class="tech-strip__item">🐳 Docker</span>
+      <span class="tech-strip__item">🌐 .NET / Java</span>
+      <!-- Duplicate for seamless loop -->
+      <span class="tech-strip__item">⚡ GeneXus</span>
+      <span class="tech-strip__item">🤖 GeneXus Enterprise IA</span>
+      <span class="tech-strip__item">🐍 Python & FastAPI</span>
+      <span class="tech-strip__item">🗄️ PostgreSQL</span>
+      <span class="tech-strip__item">☁️ AWS / Azure</span>
+      <span class="tech-strip__item">🔗 API REST</span>
+      <span class="tech-strip__item">📊 Power BI</span>
+      <span class="tech-strip__item">🧠 OpenAI / Gemini</span>
+      <span class="tech-strip__item">🐳 Docker</span>
+      <span class="tech-strip__item">🌐 .NET / Java</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       SERVICES
+       ═══════════════════════════════════════ -->
+  <section class="section" id="servicios">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="section__tag">Expertise</span>
+        <h2 class="section__title">Servicios que Impulsan el Futuro</h2>
+        <p class="section__subtitle">
+          Especialización técnica y visión de negocio unidas para resolver los desafíos más complejos de la industria.
+        </p>
+      </div>
+      <div class="services-grid">
+        <article class="service-card reveal reveal-delay-1">
+          <div class="service-card__icon">💡</div>
+          <h3 class="service-card__title">Consultoría GeneXus</h3>
+          <p class="service-card__text">
+            Arquitectura avanzada y modernización de sistemas legacy. 
+            Maximizamos el potencial de GeneXus 18 y Next para desarrollos 
+            ágiles y multiplataforma con estándares de seguridad bancaria.
+          </p>
+          <a href="#contacto" class="service-card__link">Consultar Especialista →</a>
+        </article>
+        <article class="service-card reveal reveal-delay-2">
+          <div class="service-card__icon">🤖</div>
+          <h3 class="service-card__title">Inteligencia Artificial</h3>
+          <p class="service-card__text">
+            Despliegue de LLMs corporativos y agentes de IA autónomos. 
+            Integramos GeneXus Enterprise AI para automatizar flujos 
+            complejos y análisis de datos en tiempo real.
+          </p>
+          <a href="#contacto" class="service-card__link">Consultar Especialista →</a>
+        </article>
+        <article class="service-card reveal reveal-delay-3">
+          <div class="service-card__icon">📚</div>
+          <h3 class="service-card__title">Formación In-Company</h3>
+          <p class="service-card__text">
+            Capacitación técnica de alto rendimiento para equipos de TI. 
+            Workshops prácticos sobre patrones de diseño, integración 
+            continua y mejores prácticas en el ecosistema GeneXus.
+          </p>
+          <a href="#contacto" class="service-card__link">Consultar Especialista →</a>
+        </article>
+        <article class="service-card reveal reveal-delay-4">
+          <div class="service-card__icon">🛡️</div>
+          <h3 class="service-card__title">Soporte & Evolución</h3>
+          <p class="service-card__text">
+            Mantenimiento proactivo y gestión de infraestructura. 
+            Garantizamos la continuidad operativa con SLAs rigurosos y 
+            un sistema de monitoreo inteligente 24/7.
+          </p>
+          <a href="#contacto" class="service-card__link">Consultar Especialista →</a>
+        </article>
+      </div>
     </div>
   </section>
 
-  <!-- Call to Action -->
-  <section class="cta-section">
-    <h2>¿Listo para impulsar tu transformación?</h2>
-    <a href="contact.html" class="cta-button">Contáctanos</a>
+  <!-- ═══════════════════════════════════════
+       HOW IT WORKS
+       ═══════════════════════════════════════ -->
+  <section class="section section--alt" id="como-funciona">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="section__tag">Metodología</span>
+        <h2 class="section__title">Nuestra Ruta al Éxito</h2>
+        <p class="section__subtitle">
+          Un enfoque estructurado y transparente diseñado para mitigar riesgos y acelerar el Time-to-Market.
+        </p>
+      </div>
+      <div class="steps">
+        <div class="step reveal reveal-delay-1">
+          <div class="step__number">1</div>
+          <h3 class="step__title">Diagnóstico</h3>
+          <p class="step__text">
+            Auditoría técnica y análisis de requerimientos para alinear la tecnología con los objetivos de negocio.
+          </p>
+        </div>
+        <div class="step reveal reveal-delay-2">
+          <div class="step__number">2</div>
+          <h3 class="step__title">Estrategia</h3>
+          <p class="step__text">
+            Definición de arquitectura y hoja de ruta incremental priorizando los procesos de mayor impacto.
+          </p>
+        </div>
+        <div class="step reveal reveal-delay-3">
+          <div class="step__number">3</div>
+          <h3 class="step__title">Ejecución</h3>
+          <p class="step__text">
+            Desarrollo ágil bajo metodología SCRUM con entregas de valor continuo y testing riguroso.
+          </p>
+        </div>
+        <div class="step reveal reveal-delay-4">
+          <div class="step__number">4</div>
+          <h3 class="step__title">Operación</h3>
+          <p class="step__text">
+            Transferencia de conocimiento, despliegue seguro y soporte técnico especializado post-lanzamiento.
+          </p>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <p>&copy; 2026 Aliso – Todos los derechos reservados.</p>
-    <div class="social-icons">
-      <a href="#" aria-label="Twitter">🐦</a>
-      <a href="#" aria-label="LinkedIn">💼</a>
+  <!-- ═══════════════════════════════════════
+       TESTIMONIALS
+       ═══════════════════════════════════════ -->
+  <section class="section" id="testimonios">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="section__tag">Casos de Éxito</span>
+        <h2 class="section__title">Confianza Enterprise</h2>
+        <p class="section__subtitle">
+          Organizaciones líderes que han transformado sus operaciones con nuestra asesoría.
+        </p>
+      </div>
+      <div class="testimonials-slider reveal">
+        <div class="testimonials-track" id="testimonialsTrack">
+
+          <div class="testimonial-card">
+            <p class="testimonial-card__quote">
+              "Con Aliso implementamos un core bancario en tiempo récord. Su dominio de GeneXus
+              y la integración de agentes de IA nos permitió automatizar el 40% de las operaciones
+              de soporte en menos de un semestre."
+            </p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">MR</div>
+              <div>
+                <div class="testimonial-card__name">Ing. Martín Rodríguez</div>
+                <div class="testimonial-card__role">Director de Tecnología — Banco del Sur</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <p class="testimonial-card__quote">
+              "La capacidad de Aliso para traducir necesidades de negocio en soluciones técnicas
+              robustas es excepcional. Su programa de capacitación niveló a todo nuestro equipo
+              en las últimas versiones de GeneXus e IA."
+            </p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">CL</div>
+              <div>
+                <div class="testimonial-card__name">Carolina López</div>
+                <div class="testimonial-card__role">Gerente de Innovación — Logística Global</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <p class="testimonial-card__quote">
+              "Buscábamos un socio estratégico, no solo un proveedor. Aliso nos brindó la
+              arquitectura necesaria para escalar nuestra plataforma a nivel regional con 
+              una estabilidad del 99.9%."
+            </p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">JP</div>
+              <div>
+                <div class="testimonial-card__name">Juan Pablo Fernández</div>
+                <div class="testimonial-card__role">CEO — Fintech Hub</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="testimonials-nav" id="testimonialsNav">
+          <button class="active" data-index="0" aria-label="Testimonio 1"></button>
+          <button data-index="1" aria-label="Testimonio 2"></button>
+          <button data-index="2" aria-label="Testimonio 3"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       FAQ
+       ═══════════════════════════════════════ -->
+  <section class="section section--alt" id="faq">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="section__tag">Knowledge Base</span>
+        <h2 class="section__title">Consultas Frecuentes</h2>
+      </div>
+      <div class="faq-list reveal">
+
+        <div class="faq-item">
+          <button class="faq-item__question">
+            ¿Cómo garantizan la seguridad en integraciones con IA?
+            <span class="faq-item__icon">+</span>
+          </button>
+          <div class="faq-item__answer">
+            <p>
+              Implementamos GeneXus Enterprise AI bajo entornos controlados, 
+              asegurando que los datos sensibles nunca salgan de la infraestructura 
+              privada de la empresa y cumpliendo con normativas GDPR y estándares locales.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-item__question">
+            ¿Cuál es el tiempo promedio de retorno de inversión (ROI)?
+            <span class="faq-item__icon">+</span>
+          </button>
+          <div class="faq-item__answer">
+            <p>
+              Nuestros clientes suelen ver mejoras en la productividad del desarrollo 
+              en las primeras 4 semanas. El ROI financiero se alcanza típicamente 
+              entre los 6 y 12 meses gracias a la reducción de deuda técnica y costos operativos.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-item__question">
+            ¿Pueden trabajar sobre sistemas GeneXus antiguos?
+            <span class="faq-item__icon">+</span>
+          </button>
+          <div class="faq-item__answer">
+            <p>
+              Sí. Somos expertos en procesos de modernización. Ayudamos a migrar 
+              de versiones antiguas a GeneXus 18 o Next, rediseñando la arquitectura 
+              sin interrumpir la operación del negocio.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       CONTACT FORM
+       ═══════════════════════════════════════ -->
+  <section class="section" id="contacto">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="section__tag">Partnership</span>
+        <h2 class="section__title">Iniciemos una Conversación</h2>
+        <p class="section__subtitle">
+          Analicemos juntos cómo la tecnología puede resolver sus desafíos actuales.
+        </p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <div class="contact-info__item">
+            <div class="contact-info__icon">📧</div>
+            <div>
+              <div class="contact-info__label">Email Corporativo</div>
+              <div class="contact-info__value">solutions@aliso.com.ar</div>
+            </div>
+          </div>
+          <div class="contact-info__item">
+            <div class="contact-info__icon">📞</div>
+            <div>
+              <div class="contact-info__label">Atención Directa</div>
+              <div class="contact-info__value">+54 9 11 5000-0000</div>
+            </div>
+          </div>
+          <div class="contact-info__item">
+            <div class="contact-info__icon">📍</div>
+            <div>
+              <div class="contact-info__label">Sede Central</div>
+              <div class="contact-info__value">Buenos Aires, Argentina</div>
+            </div>
+          </div>
+          <div class="contact-info__item">
+            <div class="contact-info__icon">🕐</div>
+            <div>
+              <div class="contact-info__label">Business Hours</div>
+              <div class="contact-info__value">Lun – Vie, 09:00 – 18:30 (GMT-3)</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal reveal-delay-2">
+          <form class="contact-form" id="contactForm">
+            <div id="formFields">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="nombre">Nombre *</label>
+                  <input type="text" id="nombre" name="nombre" placeholder="Escriba su nombre" required />
+                  <div class="form-error">Este campo es requerido</div>
+                </div>
+                <div class="form-group">
+                  <label for="apellido">Apellido *</label>
+                  <input type="text" id="apellido" name="apellido" placeholder="Escriba su apellido" required />
+                  <div class="form-error">Este campo es requerido</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Profesional *</label>
+                <input type="email" id="email" name="email" placeholder="ejemplo@empresa.com" required />
+                <div class="form-error">Ingrese un correo válido</div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="empresa">Organización</label>
+                  <input type="text" id="empresa" name="empresa" placeholder="Nombre de su empresa" />
+                </div>
+                <div class="form-group">
+                  <label for="servicio">Área de Interés</label>
+                  <select id="servicio" name="servicio">
+                    <option value="">Seleccionar...</option>
+                    <option value="consultoria">Consultoría GeneXus</option>
+                    <option value="ia">Inteligencia Artificial</option>
+                    <option value="capacitacion">Capacitación Técnica</option>
+                    <option value="soporte">Soporte & Mantenimiento</option>
+                    <option value="otro">Otro Requerimiento</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="mensaje">Consulta o Requerimiento *</label>
+                <textarea id="mensaje" name="mensaje" placeholder="Describa brevemente su necesidad o proyecto..." required></textarea>
+                <div class="form-error">Por favor, detalle su consulta</div>
+              </div>
+              <button type="submit" class="btn btn--primary btn--large" style="width:100%; justify-content:center;">
+                Enviar Solicitud de Consulta →
+              </button>
+            </div>
+            <div class="form-success" id="formSuccess">
+              <div class="form-success__icon">✅</div>
+              <h3 class="form-success__title">¡Solicitud Recibida!</h3>
+              <p class="form-success__text">Un especialista se pondrá en contacto con usted en un plazo máximo de 24 horas hábiles.</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       CTA BANNER
+       ═══════════════════════════════════════ -->
+  <section class="section">
+    <div class="container">
+      <div class="cta-banner reveal">
+        <h2 class="cta-banner__title">¿Listo para Liderar la Era de la IA?</h2>
+        <p class="cta-banner__text">
+          No se quede atrás. Las empresas que integran IA hoy serán las líderes del mercado mañana.
+        </p>
+        <a href="#contacto" class="btn btn--primary btn--large">Agendar Reunión Estratégica →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="#" class="nav__logo">
+            <img src="assets/logo.png" alt="Aliso Web Solution" style="height:40px;filter:brightness(10);" />
+            <span class="nav__logo-text" style="color:white;">Aliso</span>
+          </a>
+          <p class="footer__brand-desc">
+            Consultoría tecnológica de élite especializada en ecosistemas GeneXus e Inteligencia Artificial aplicada. 
+            Impulsamos la eficiencia operativa a través de innovación constante.
+          </p>
+          <div class="footer__social">
+            <a href="#" aria-label="LinkedIn">💼</a>
+            <a href="#" aria-label="GitHub">💻</a>
+            <a href="#" aria-label="Twitter">🐦</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer__col-title">Servicios Corporativos</h4>
+          <div class="footer__links">
+            <a href="#servicios">Consultoría Estratégica</a>
+            <a href="#servicios">Implementación de IA</a>
+            <a href="#servicios">Desarrollo Low-Code</a>
+            <a href="#servicios">Modernización de Sistemas</a>
+            <a href="#servicios">Soporte Nivel 3</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer__col-title">Compañía</h4>
+          <div class="footer__links">
+            <a href="#inicio">Sobre Nosotros</a>
+            <a href="#como-funciona">Nuestra Metodología</a>
+            <a href="#testimonios">Casos de Éxito</a>
+            <a href="#faq">Knowledge Base</a>
+            <a href="#">Trabajá con nosotros</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer__col-title">Contacto Legal</h4>
+          <div class="footer__links">
+            <a href="mailto:solutions@aliso.com.ar">solutions@aliso.com.ar</a>
+            <a href="#">Términos y Condiciones</a>
+            <a href="#">Política de Privacidad</a>
+            <a href="#">Compliance</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 Aliso Web Solution — Todos los derechos reservados.</span>
+        <div class="footer__badges">
+          <span>ISO 9001 Cert</span> | <span>GeneXus Gold Partner</span>
+        </div>
+      </div>
     </div>
   </footer>
 

@@ -1,40 +1,126 @@
-/* variables.css */
+/* ============================================
+   ALISO WEB SOLUTION — Design System Tokens
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
 :root {
-  /* Brand colors – replace with exact values from Manual de Marca */
-  --color-primary: #6AA439; /* VERDE */
-  --color-primary-dark: #316234; /* VERDE OSCURO */
-  --color-secondary: #A11129; /* ROJO */
-  --color-accent: #CC5E4D; /* ROJO CLARO */
-  --color-bg-light: #f8f9fa;
-  --color-bg-dark: #212529;
-  --color-text-light: #ffffff;
-  --color-text-dark: #212529;
-  /* Font families */
-  --font-primary: 'Arial', 'Helvetica', 'Helvetica Neue', sans-serif;
-  --font-heading: 'Poppins', 'Outfit', var(--font-sans);
-  /* Spacing */
-  --space-xs: 0.4rem;
-  --space-sm: 0.8rem;
-  --space-md: 1.6rem;
-  --space-lg: 3.2rem;
-  --space-xl: 4.8rem;
-  /* Border radius */
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
-  /* Shadows */
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
-  --shadow-md: 0 4px 6px rgba(0,0,0,0.15);
-  --shadow-lg: 0 10px 20px rgba(0,0,0,0.2);
+  /* ── Brand Colors ── */
+  --color-green:        #6AA439;
+  --color-green-dark:   #316234;
+  --color-green-light:  #8CC63F;
+  --color-red:          #A11129;
+  --color-red-light:    #CC5E4D;
+  --color-gold:         #D4A843;
+
+  /* ── Semantic Palette ── */
+  --color-primary:      #6AA439;
+  --color-primary-hover:#5A8F30;
+  --color-primary-dark: #316234;
+  --color-secondary:    #A11129;
+  --color-accent:       #CC5E4D;
+  --color-success:      #22C55E;
+  --color-warning:      #F59E0B;
+  --color-info:         #3B82F6;
+
+  /* ── Neutral Palette ── */
+  --color-white:        #FFFFFF;
+  --color-gray-50:      #F8FAFC;
+  --color-gray-100:     #F1F5F9;
+  --color-gray-200:     #E2E8F0;
+  --color-gray-300:     #CBD5E1;
+  --color-gray-400:     #94A3B8;
+  --color-gray-500:     #64748B;
+  --color-gray-600:     #475569;
+  --color-gray-700:     #334155;
+  --color-gray-800:     #1E293B;
+  --color-gray-900:     #0F172A;
+  --color-black:        #020617;
+
+  /* ── Backgrounds ── */
+  --bg-body:            #FFFFFF;
+  --bg-section:         #F8FAFC;
+  --bg-card:            #FFFFFF;
+  --bg-dark:            #0F172A;
+  --bg-dark-card:       rgba(30, 41, 59, 0.6);
+
+  /* ── Text Colors ── */
+  --text-primary:       #0F172A;
+  --text-secondary:     #475569;
+  --text-muted:         #94A3B8;
+  --text-inverse:       #F8FAFC;
+
+  /* ── Typography ── */
+  --font-primary:       'Plus Jakarta Sans', 'Arial', 'Helvetica', sans-serif;
+  --font-mono:          'JetBrains Mono', 'Fira Code', monospace;
+
+  /* ── Font Sizes (fluid) ── */
+  --text-xs:   clamp(0.7rem,  0.8vw,  0.75rem);
+  --text-sm:   clamp(0.8rem,  0.9vw,  0.875rem);
+  --text-base: clamp(0.9rem,  1vw,    1rem);
+  --text-lg:   clamp(1.05rem, 1.2vw,  1.125rem);
+  --text-xl:   clamp(1.15rem, 1.4vw,  1.25rem);
+  --text-2xl:  clamp(1.4rem,  2vw,    1.5rem);
+  --text-3xl:  clamp(1.7rem,  2.5vw,  1.875rem);
+  --text-4xl:  clamp(2rem,    3vw,    2.25rem);
+  --text-5xl:  clamp(2.5rem,  4vw,    3rem);
+  --text-6xl:  clamp(3rem,    5vw,    3.75rem);
+
+  /* ── Spacing Scale ── */
+  --space-1:   0.25rem;
+  --space-2:   0.5rem;
+  --space-3:   0.75rem;
+  --space-4:   1rem;
+  --space-5:   1.25rem;
+  --space-6:   1.5rem;
+  --space-8:   2rem;
+  --space-10:  2.5rem;
+  --space-12:  3rem;
+  --space-16:  4rem;
+  --space-20:  5rem;
+  --space-24:  6rem;
+  --space-32:  8rem;
+
+  /* ── Border Radius ── */
+  --radius-sm:   6px;
+  --radius-md:   10px;
+  --radius-lg:   16px;
+  --radius-xl:   24px;
+  --radius-2xl:  32px;
+  --radius-full: 9999px;
+
+  /* ── Shadows ── */
+  --shadow-sm:   0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md:   0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05);
+  --shadow-lg:   0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.04);
+  --shadow-xl:   0 20px 25px -5px rgba(0,0,0,0.08), 0 8px 10px -6px rgba(0,0,0,0.04);
+  --shadow-glow: 0 0 30px rgba(106,164,57,0.15);
+  --shadow-card: 0 1px 3px rgba(0,0,0,0.04), 0 6px 16px rgba(0,0,0,0.06);
+
+  /* ── Transitions ── */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ── Z-Index ── */
+  --z-dropdown: 100;
+  --z-sticky:   200;
+  --z-overlay:  300;
+  --z-modal:    400;
+  --z-toast:    500;
+
+  /* ── Container ── */
+  --container-max: 1200px;
+  --container-padding: var(--space-6);
 }
 
-/* Dark mode toggle – user can add a class .dark on <html> */
+/* ── Dark Mode ── */
 html.dark {
-  --color-bg: var(--color-bg-dark);
-  --color-text: var(--color-text-light);
-}
-
-html {
-  --color-bg: var(--color-bg-light);
-  --color-text: var(--color-text-dark);
+  --bg-body:       #0F172A;
+  --bg-section:    #1E293B;
+  --bg-card:       rgba(30,41,59,0.8);
+  --text-primary:  #F8FAFC;
+  --text-secondary:#CBD5E1;
+  --text-muted:    #64748B;
+  --shadow-card:   0 1px 3px rgba(0,0,0,0.2), 0 6px 16px rgba(0,0,0,0.3);
 }

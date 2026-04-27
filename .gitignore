@@ -1,6 +1,11 @@
 # Node modules
 node_modules/
 
+# Python
+__pycache__/
+*.pyc
+.venv/
+
 # Build output
 dist/
 build/
@@ -16,3 +21,9 @@ yarn-error.log
 
 # Environment
 .env
+dist_produccion/
+test.db
+uploads/
+backend/__pycache__/
+.env
+backend/.env
