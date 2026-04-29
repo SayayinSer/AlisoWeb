@@ -10,8 +10,8 @@ echo.
 :: 1. Crear Backup Local (.zip)
 set BACKUP_NAME=AlisoWeb_Backup_%date:~-4,4%%date:~-7,2%%date:~-10,2%.zip
 echo [1/3] Creando copia de seguridad local: %BACKUP_NAME%
-:: Usando PowerShell para comprimir ignorando carpetas pesadas/temporales
-powershell -Command "Compress-Archive -Path '*.*', 'assets', 'backend', 'css', 'images', 'js' -DestinationPath '%BACKUP_NAME%' -Force"
+:: Usando PowerShell para comprimir todos los archivos y carpetas, excluyendo archivos pesados e innecesarios
+powershell -Command "Get-ChildItem -Exclude '.git', 'dist_produccion', '__pycache__', '*.zip' | Compress-Archive -DestinationPath '%BACKUP_NAME%' -Force"
 echo Backup local creado exitosamente.
 echo.
 

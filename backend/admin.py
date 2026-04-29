@@ -5,7 +5,7 @@ from starlette.responses import RedirectResponse
 from sqladmin import ModelView, Admin
 from sqladmin.authentication import AuthenticationBackend
 from passlib.context import CryptContext
-from main import AdminUser, News, SiteSetting, ContactMessage, NewsletterSubscription, SessionLocal
+from main import AdminUser, News, SiteSetting, ContactMessage, NewsletterSubscription, Testimonial, SessionLocal
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
@@ -45,6 +45,8 @@ class AdminAuth(AuthenticationBackend):
             user = db.query(AdminUser).filter(AdminUser.id == int(token)).first()
             if not user or not user.is_active:
                 return False
+        except Exception:
+            return False
         finally:
             db.close()
         return True
@@ -94,6 +96,34 @@ class NewsView(ModelView, model=News):
                 data['editor_id'] = user_id
                 data['fecha_publicacion'] = datetime.now()
 
+class TestimonialView(ModelView, model=Testimonial):
+    column_list = [Testimonial.id, Testimonial.cliente, Testimonial.empresa_puesto, Testimonial.estado, Testimonial.fecha_creacion, Testimonial.fecha_publicacion]
+    form_columns = [Testimonial.cliente, Testimonial.empresa_puesto, Testimonial.comentario, Testimonial.estado]
+    column_searchable_list = [Testimonial.cliente, Testimonial.comentario]
+    form_choices = {
+        'estado': [
+            ('Borrador', 'Borrador'),
+            ('Pendiente de Revisión', 'Pendiente de Revisión'),
+            ('Publicado', 'Publicado'),
+        ]
+    }
+    name_plural = "Testimonios / Clientes"
+    icon = "fa-solid fa-comments"
+
+    async def on_model_change(self, data, model, is_created, request):
+        user_id = int(request.session.get("token"))
+        rol = request.session.get("rol")
+        
+        if is_created:
+            data['autor_id'] = user_id
+        
+        if data.get('estado') == 'Publicado':
+            if rol != 'Editor':
+                raise ValueError("Solo un Editor puede publicar testimonios.")
+            if not model.editor_id:
+                data['editor_id'] = user_id
+                data['fecha_publicacion'] = datetime.now()
+
 class SiteSettingView(ModelView, model=SiteSetting):
     column_list = [SiteSetting.clave, SiteSetting.valor, SiteSetting.descripcion]
     form_columns = [SiteSetting.clave, SiteSetting.valor, SiteSetting.descripcion]
@@ -122,6 +152,7 @@ def setup_admin(app, engine):
     authentication_backend = AdminAuth(secret_key="secret-key-12345")
     admin = Admin(app=app, engine=engine, authentication_backend=authentication_backend, title="Aliso Web Admin")
     admin.add_view(NewsView)
+    admin.add_view(TestimonialView)
     admin.add_view(ContactMessageView)
     admin.add_view(NewsletterSubscriptionView)
     admin.add_view(SiteSettingView)

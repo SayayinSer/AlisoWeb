@@ -116,6 +116,23 @@ class SiteSetting(Base):
     descripcion = Column(String(255), nullable=True)
 
 
+class Testimonial(Base):
+    __tablename__ = "testimonials"
+
+    id = Column(Integer, primary_key=True, index=True, autoincrement=True)
+    cliente = Column(String(100), nullable=False)
+    empresa_puesto = Column(String(150), nullable=True)
+    comentario = Column(Text, nullable=False)
+    estado = Column(String(50), default="Borrador") # Borrador, Pendiente de Revisión, Publicado
+    autor_id = Column(Integer, ForeignKey("admin_users.id"), nullable=True)
+    editor_id = Column(Integer, ForeignKey("admin_users.id"), nullable=True)
+    fecha_creacion = Column(DateTime, default=func.now(), nullable=False)
+    fecha_publicacion = Column(DateTime, nullable=True)
+
+    autor = relationship("AdminUser", foreign_keys=[autor_id])
+    editor = relationship("AdminUser", foreign_keys=[editor_id])
+
+
 # ══════════════════════════════
 # SCHEMAS (Pydantic)
 # ══════════════════════════════
@@ -181,11 +198,13 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.add_middleware(SessionMiddleware, secret_key="super-secret-aliso-key")
-
 os.makedirs("uploads", exist_ok=True)
 app.mount("/uploads", StaticFiles(directory="uploads"), name="uploads")
 
+
+# Initialize Admin
+from admin import setup_admin, get_password_hash
+setup_admin(app, engine)
 
 # ── Startup: create tables and init admin ──
 @app.on_event("startup")
@@ -193,10 +212,6 @@ def on_startup():
     logger.info("Creando tablas en la base de datos AlisoWebDB...")
     Base.metadata.create_all(bind=engine)
     logger.info("✅ Tablas creadas correctamente.")
-    
-    # Initialize Admin
-    from admin import setup_admin, get_password_hash
-    setup_admin(app, engine)
     
     # Create default AdminUser if none exists
     db = SessionLocal()
@@ -292,6 +307,19 @@ def list_published_news(db: Session = Depends(get_db)):
         "seccion": n.seccion,
         "fecha_publicacion": n.fecha_publicacion
     } for n in news]
+
+
+@app.get("/api/testimonials", tags=["Testimonials"])
+def list_published_testimonials(db: Session = Depends(get_db)):
+    """Obtener todas las recomendaciones/experiencias publicadas para el frontend."""
+    testimonials = db.query(Testimonial).filter(Testimonial.estado == 'Publicado').order_by(Testimonial.fecha_publicacion.desc()).all()
+    return [{
+        "id": t.id,
+        "cliente": t.cliente,
+        "empresa_puesto": t.empresa_puesto,
+        "comentario": t.comentario,
+        "fecha_publicacion": t.fecha_publicacion
+    } for t in testimonials]
 
 
 @app.get("/api/settings", tags=["Settings"])

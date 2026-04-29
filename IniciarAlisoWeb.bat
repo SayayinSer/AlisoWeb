@@ -7,15 +7,13 @@ echo        INICIANDO ENTORNO ALISO WEB (LAMP DEV)
 echo ==================================================
 echo.
 
-:: 1. Iniciar el Backend (FastAPI + MySQL) en una nueva ventana minimizada
+:: 1. Iniciar el Backend (FastAPI + MySQL) en una nueva ventana
 echo Iniciando Servidor Backend (API)...
-cd backend
-start "AlisoWeb Backend (API)" /MIN cmd /c "python -m uvicorn main:app --port 8001 --reload"
-cd ..
+start "AlisoWeb Backend (API)" /D "%~dp0backend" cmd /k "python -m uvicorn main:app --port 8001 --reload"
 
-:: 2. Iniciar el Frontend (Static) en una nueva ventana minimizada
+:: 2. Iniciar el Frontend (Static) en una nueva ventana
 echo Iniciando Servidor Frontend (HTML/CSS/JS)...
-start "AlisoWeb Frontend" /MIN cmd /c "python -m http.server 8000"
+start "AlisoWeb Frontend" /D "%~dp0" cmd /k "python -m http.server 8000"
 
 :: 3. Esperar un par de segundos para asegurar que los servidores levantaron
 timeout /t 3 > nul

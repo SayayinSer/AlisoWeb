@@ -15,8 +15,12 @@ mkdir %FRONTEND_DIR%
 echo [1/3] Copiando archivos del Frontend...
 xcopy /E /I /Q css %FRONTEND_DIR%\css
 xcopy /E /I /Q js %FRONTEND_DIR%\js
-copy index.html %FRONTEND_DIR%\ > nul
+if exist assets xcopy /E /I /Q assets %FRONTEND_DIR%\assets > nul
 if exist images xcopy /E /I /Q images %FRONTEND_DIR%\images > nul
+copy index.html %FRONTEND_DIR%\ > nul
+copy *.jpg %FRONTEND_DIR%\ > nul 2>&1
+copy *.jpeg %FRONTEND_DIR%\ > nul 2>&1
+copy *.png %FRONTEND_DIR%\ > nul 2>&1
 
 echo [2/3] Copiando archivos del Backend...
 xcopy /E /I /Q backend %BACKEND_DIR%

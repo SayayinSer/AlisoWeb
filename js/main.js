@@ -3,7 +3,36 @@
    ============================================ */
 
 // ── CONFIG ──
-const API_BASE = 'http://localhost:8001/api';
+const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:';
+const API_BASE = isLocal ? 'http://127.0.0.1:8001/api' : '/api';
+
+// ── FETCH DYNAMIC DATA ──
+async function loadSettings() {
+  try {
+    const res = await fetch(`${API_BASE}/settings`);
+    if (res.ok) {
+      const data = await res.json();
+      document.querySelectorAll('[data-setting]').forEach(el => {
+        const key = el.getAttribute('data-setting');
+        if (data[key]) {
+          el.textContent = data[key];
+          // Actualizar href si es un enlace mailto o tel
+          if (el.tagName === 'A' && el.getAttribute('href').startsWith('mailto:')) {
+            el.href = 'mailto:' + data[key];
+          } else if (el.tagName === 'A' && el.getAttribute('href').startsWith('tel:')) {
+            el.href = 'tel:' + data[key];
+          }
+        }
+      });
+    }
+  } catch (error) {
+    console.warn("No se pudieron cargar las configuraciones dinámicas:", error);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  loadSettings();
+});
 
 // ══════════════════════════════
 // HEADER SCROLL EFFECT
