@@ -198,6 +198,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+app.add_middleware(SessionMiddleware, secret_key="super-secret-key-12345")
+
 os.makedirs("uploads", exist_ok=True)
 app.mount("/uploads", StaticFiles(directory="uploads"), name="uploads")
 

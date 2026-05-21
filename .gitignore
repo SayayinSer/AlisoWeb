@@ -27,3 +27,5 @@ uploads/
 backend/__pycache__/
 .env
 backend/.env
+Backups/
+.agents/skills/

@@ -1,0 +1,14 @@
+﻿{
+    "mcpServers":  {
+                       "genexus":  {
+                                       "args":  [
+
+                                                ],
+                                       "env":  {
+                                                   "GX_CONFIG_PATH":  "D:\\aaProyectos\\Entorno03\\AlisoWeb\\.agents\\gx_config.json",
+                                                   "GX_MCP_STDIO":  "true"
+                                               },
+                                       "command":  "D:\\aaProyectos\\_Antigravity_Shared\\GeneXus_MCP_Gateway\\publish\\GxMcp.Gateway.exe"
+                                   }
+                   }
+}
