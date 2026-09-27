@@ -1,0 +1,19 @@
+{
+  "proyecto": "Entorno03_AlisoWeb",
+  "ruta": "D:\\aaProyectos\\Entorno03\\AlisoWeb",
+  "ultima_actualizacion": "2026-08-25 00:21:09",
+  "modelo": "Gemini 3.7 Flash",
+  "estado": "Activo / En Progreso",
+  "hito": "Desarrollo Frontend AlisoWeb",
+  "estado_kb": "No aplica / Frontend puro",
+  "tareas_pendientes": [
+    "Optimización de componentes UI y navegación reactiva"
+  ],
+  "tareas_completadas": [
+    "Estructura base de proyecto"
+  ],
+  "decisiones_arquitectura": [],
+  "errores_resueltos": [],
+  "deuda_tecnica": [],
+  "notas": "Desarrollo web a medida para AlisoWeb."
+}

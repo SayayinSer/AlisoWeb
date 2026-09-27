@@ -26,6 +26,7 @@
         </a>
         <ul class="nav__links" id="navLinks">
           <li><a href="#servicios" class="nav__link">Servicios</a></li>
+          <li><a href="#apps" class="nav__link">Soluciones Verticales</a></li>
           <li><a href="#como-funciona" class="nav__link">Cómo Funciona</a></li>
           <li><a href="#tecnologias" class="nav__link">Tecnologías</a></li>
           <li><a href="#testimonios" class="nav__link">Testimonios</a></li>
@@ -33,6 +34,7 @@
           <li><a href="#contacto" class="nav__link">Contacto</a></li>
         </ul>
         <div class="nav__actions">
+          <a href="#apps" class="btn btn--secondary btn--sm nav__portal-btn">Portal Clientes ↗</a>
           <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">🌙</button>
           <a href="#contacto" class="btn btn--primary">Agendar Reunión</a>
           <button class="nav__hamburger" id="navHamburger" aria-label="Menú">
@@ -173,6 +175,67 @@
             un sistema de monitoreo inteligente 24/7.
           </p>
           <a href="#contacto" class="service-card__link">Consultar Especialista →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===========================================
+       VERTICAL SOLUTIONS / CLIENT PORTAL
+       =========================================== -->
+  <section class="section section--alt" id="apps">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="section__tag">Ecosistema Aliso</span>
+        <h2 class="section__title">Soluciones Verticales por Industria</h2>
+        <p class="section__subtitle">
+          Plataformas web especializadas de misión crítica desarrolladas por Aliso. Ingrese directamente a la aplicación correspondiente a su organización o solicite la habilitación de un nuevo vertical.
+        </p>
+      </div>
+      <div class="apps-grid" id="appsGrid">
+        <!-- Tarjetas cargadas dinámicamente desde /api/vertical-apps con fallback estático -->
+        <article class="app-card reveal reveal-delay-1">
+          <div class="app-card__header">
+            <span class="app-card__icon">🏥</span>
+            <span class="app-card__badge">En Producción</span>
+          </div>
+          <h3 class="app-card__title">Aliso Salud & Sanatorio</h3>
+          <span class="app-card__cat">Salud & Clínicas</span>
+          <p class="app-card__desc">Gestión integral de internación, historias clínicas electrónicas y facturación sanatorial de alta complejidad.</p>
+          <a href="https://salud.aliso.com.ar" target="_blank" rel="noopener" class="app-card__btn">Ingresar a la Plataforma ↗</a>
+        </article>
+
+        <article class="app-card reveal reveal-delay-2">
+          <div class="app-card__header">
+            <span class="app-card__icon">📺</span>
+            <span class="app-card__badge">En Producción</span>
+          </div>
+          <h3 class="app-card__title">Aliso Balance & Media TV</h3>
+          <span class="app-card__cat">Medios & Telecomunicaciones</span>
+          <p class="app-card__desc">Telemetría, balance de señales y monitoreo continuo de transmisión para canales y plataformas de streaming.</p>
+          <a href="https://balance.aliso.com.ar" target="_blank" rel="noopener" class="app-card__btn">Ingresar a la Plataforma ↗</a>
+        </article>
+
+        <article class="app-card reveal reveal-delay-3">
+          <div class="app-card__header">
+            <span class="app-card__icon">📑</span>
+            <span class="app-card__badge app-card__badge--clients">Acceso Clientes</span>
+          </div>
+          <h3 class="app-card__title">Aliso Facturación & Aranceles</h3>
+          <span class="app-card__cat">Gestión & ERP</span>
+          <p class="app-card__desc">Motor de liquidación arancelaria médica, validación de convenios y emisión de comprobantes electrónicos AFIP.</p>
+          <a href="https://facturacion.aliso.com.ar" target="_blank" rel="noopener" class="app-card__btn">Ingresar a la Plataforma ↗</a>
+        </article>
+
+        <article class="app-card reveal reveal-delay-4">
+          <div class="app-card__header">
+            <span class="app-card__icon">🔬</span>
+            <span class="app-card__badge app-card__badge--beta">Beta Privada</span>
+          </div>
+          <h3 class="app-card__title">Aliso Laboratorio & Diagnóstico</h3>
+          <span class="app-card__cat">Bioanálisis & Diagnóstico</span>
+          <p class="app-card__desc">Trazabilidad de muestras biológicas, conexión con auto-analizadores y emisión segura de protocolos digitales.</p>
+          <a href="https://laboratorio.aliso.com.ar" target="_blank" rel="noopener" class="app-card__btn">Ingresar a la Plataforma ↗</a>
         </article>
       </div>
     </div>
@@ -368,28 +431,35 @@
             <div class="contact-info__icon">📧</div>
             <div>
               <div class="contact-info__label">Email Corporativo</div>
-              <div class="contact-info__value" data-setting="email_contacto">solutions@aliso.com.ar</div>
+              <a href="mailto:solutions@aliso.com.ar" class="contact-info__value" data-setting="email_contacto">solutions@aliso.com.ar</a>
             </div>
           </div>
           <div class="contact-info__item">
             <div class="contact-info__icon">📞</div>
             <div>
               <div class="contact-info__label">Atención Directa</div>
-              <div class="contact-info__value" data-setting="telefono_contacto">+54 9 11 5000-0000</div>
+              <a href="tel:+5493814720970" class="contact-info__value" data-setting="telefono_contacto">+54 9 381 472-0970</a>
+            </div>
+          </div>
+          <div class="contact-info__item">
+            <div class="contact-info__icon">💬</div>
+            <div>
+              <div class="contact-info__label">WhatsApp Business</div>
+              <a href="https://wa.me/5493814720970" target="_blank" rel="noopener" class="contact-info__value" data-setting="whatsapp_contacto">+54 9 381 472-0970</a>
             </div>
           </div>
           <div class="contact-info__item">
             <div class="contact-info__icon">📍</div>
             <div>
-              <div class="contact-info__label">Sede Central</div>
-              <div class="contact-info__value">Buenos Aires, Argentina</div>
+              <div class="contact-info__label">Sede Central & Operaciones</div>
+              <div class="contact-info__value" data-setting="direccion_contacto">Buenos Aires & Tucumán, Argentina</div>
             </div>
           </div>
           <div class="contact-info__item">
             <div class="contact-info__icon">🕐</div>
             <div>
-              <div class="contact-info__label">Business Hours</div>
-              <div class="contact-info__value">Lun – Vie, 09:00 – 18:30 (GMT-3)</div>
+              <div class="contact-info__label">Horario de Atención</div>
+              <div class="contact-info__value" data-setting="horario_atencion">Lun – Vie, 09:00 – 18:30 (GMT-3)</div>
             </div>
           </div>
         </div>
@@ -462,6 +532,19 @@
           No se quede atrás. Las empresas que integran IA hoy serán las líderes del mercado mañana.
         </p>
         <a href="#contacto" class="btn btn--primary btn--large">Agendar Reunión Estratégica →</a>
+              <!-- Newsletter Subscription Box -->
+        <div class="newsletter-box reveal">
+          <div class="newsletter-box__header">
+            <h3 class="newsletter-box__title">Suscríbase a Nuestro Radar Tecnológico</h3>
+            <p class="newsletter-box__desc">Reciba mensualmente análisis exclusivos sobre IA aplicada a GeneXus y arquitectura enterprise.</p>
+          </div>
+          <form class="newsletter-form" id="newsletterForm">
+            <div class="newsletter-form__group">
+              <input type="email" id="newsletterEmail" class="newsletter-form__input" placeholder="su.correo@empresa.com" required aria-label="Correo electrónico para suscripción" />
+              <button type="submit" class="btn btn--primary newsletter-form__btn" id="newsletterSubmitBtn">Suscribirme →</button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </section>
@@ -526,6 +609,9 @@
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <div id='toastContainer' class='toast-container' aria-live='polite'></div>
+  <script src='js/main.js'></script>
 </body>
 </html>
+
+
